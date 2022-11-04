@@ -4,13 +4,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
 <body>
 	<form action="login" method="post">
 	
 		<label for = "username">User Name : </label>
 		<input type="text" id = "Username" name = "username">
+		<br/>
 		<br/>
 		<label for = "pass">Password :</label>
 		<input type="text" id="pass" name="pass">
