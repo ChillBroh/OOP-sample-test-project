@@ -22,7 +22,7 @@
 	<br>
 	<br>
 	<label for="uname">Enter user name :</label>
-	<input type="text" id="uname" name= "user">
+	<input type="text" id="uname" name= "uname">
 	<br>
 	<br>
 	<label for="pass">Enter password :</label>

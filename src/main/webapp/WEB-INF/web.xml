@@ -9,4 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>CustomerInsert</display-name>
+    <servlet-name>CustomerInsert</servlet-name>
+    <servlet-class>com.customer.CustomerInsert</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerInsert</servlet-name>
+    <url-pattern>/CustomerInsert</url-pattern>
+  </servlet-mapping>
 </web-app>
