@@ -13,9 +13,9 @@ public class CustomerInsert extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String fname = request.getParameter("fname");
-		String lname = request.getParameter("lname");
+		
 		String email = request.getParameter("email");
+		String phone = request.getParameter("phone");
 		String username = request.getParameter("uname");
 		String password = request.getParameter("pass");
 	}

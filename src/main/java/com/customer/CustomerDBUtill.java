@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.oracle.wls.shaded.org.apache.xalan.trace.PrintTraceListener;
+
 
 
 public class CustomerDBUtill {
@@ -53,7 +55,7 @@ public class CustomerDBUtill {
 		
 	}
 	
-	public boolean insertCustomer(String fname, String lname, String email, String username, String password){
+	public boolean insertCustomer(String email,String phone, String username, String password){
 		
 	boolean isSuccess = false;
 	
@@ -64,7 +66,17 @@ public class CustomerDBUtill {
 	String pass = "Melisha@9";
 	
 	//insert data
-	
+	try {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection(url,user,pass);
+		Statement stmt = con.createStatement();
+		
+		String sql = "insert into customer values (0,'"+email+"','"phone"','"+username+"','"+password+"')";
+		int rs = stmt.executeUpdate(sql);
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
 	
     return isSuccess;
 		

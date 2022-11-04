@@ -9,16 +9,12 @@
 <body>
 	<form action="#" method="POST">
 	
-	<label for="fname">Enter the first name :</label>
-	<input type="text" id="fname" name="fname">
-	<br>
-	<br>
-	<label for="lname">Enter the last name :</label>
-	<input type="text" id="lname" name= "lname">
-	<br>
-	<br>
 	<label for="email">Enter Your email :</label>
 	<input type="text" id="email" name= "email">
+	<br>
+	<br>
+	<label for="phone">Enter Your phone number :</label>
+	<input type="text" id="phone" name= "phone">
 	<br>
 	<br>
 	<label for="uname">Enter user name :</label>
