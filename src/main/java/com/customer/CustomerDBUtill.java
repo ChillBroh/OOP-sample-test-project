@@ -52,5 +52,54 @@ public class CustomerDBUtill {
 		return customer;
 		
 	}
+	
+	public boolean insertCustomer(String fname, String lname, String email, String username, String password){
+		
+	boolean isSuccess = false;
+	
+	//create database connection
+	
+	String url = "jdbc:mysql://localhost:3306/hotel";
+	String user = "root";
+	String pass = "Melisha@9";
+	
+	//insert data
+	
+	
+    return isSuccess;
+		
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
