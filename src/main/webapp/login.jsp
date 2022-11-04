@@ -7,6 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<form action="login" method="post">
+	
+		<label for = "username">User Name : </label>
+		<input type="text" id = "Username" name = "username">
+		<br/>
+		<label for = "pass">Password :</label>
+		<input type="text" id="pass" name="pass">
+		<br/> 
+		<br/>
+		
+		<input type="submit" value= "Login">
+	</form>
 </body>
 </html>
