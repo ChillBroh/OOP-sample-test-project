@@ -57,29 +57,37 @@ public class CustomerDBUtill {
 	
 	public boolean insertCustomer(String email,String phone, String username, String password){
 		
-	boolean isSuccess = false;
-	
-	//create database connection
-	
-	String url = "jdbc:mysql://localhost:3306/hotel";
-	String user = "root";
-	String pass = "Melisha@9";
-	
-	//insert data
-	try {
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con = DriverManager.getConnection(url,user,pass);
-		Statement stmt = con.createStatement();
+		boolean isSuccess = false;
 		
-		String sql = "insert into customer values (0,'"+email+"','"phone"','"+username+"','"+password+"')";
-		int rs = stmt.executeUpdate(sql);
+		//create database connection
 		
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-	
-    return isSuccess;
+		String url = "jdbc:mysql://localhost:3306/hotel";
+		String user = "root";
+		String pass = "Melisha@9";
 		
+		//insert data
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,user,pass);
+			Statement stmt = con.createStatement();
+			
+			String sql = "insert into customer values (0,'"+email+"','"+phone+"','"+username+"','"+password+"')";
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs > 0) {
+				isSuccess = true; 
+				
+			}
+			else {
+				isSuccess = false;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	    return isSuccess;
+			
 	}
 
 }

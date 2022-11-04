@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="#" method="POST">
+	<form action="cusinsert" method="POST">
 	
 	<label for="email">Enter Your email :</label>
 	<input type="text" id="email" name= "email">
