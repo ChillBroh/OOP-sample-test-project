@@ -11,7 +11,7 @@ import java.util.List;
 
 public class CustomerDBUtill {
 	
-	public static List<Customer> validate(String userName, String password){
+	public List<Customer> validate(String userName, String password){
 		
 		ArrayList <Customer> customer = new ArrayList<>();
 		
