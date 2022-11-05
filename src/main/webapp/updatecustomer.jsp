@@ -19,7 +19,7 @@
 		
 	%>
 	
-	<form action="#" method="post">
+	<form action="updatecustomer" method="post">
 	
 	<label for="id">Customer ID</label>
 	<input type="text" id="id" name="id" value="<%= id%>" readonly>

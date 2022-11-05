@@ -86,6 +86,31 @@ public class CustomerDBUtill {
 	    return isSuccess;
 			
 	}
+	
+	public boolean updateCustomer(String id,String email, String phone, String username, String password) {
+		boolean isSuccess = false;
+		
+		try {
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "update customer set email= '"+email+"','"+phone+"','"+username+"','"+password+"' where id= '"+id+"'";
+			
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs > 0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+	}
 
 }
 
