@@ -121,7 +121,7 @@ public class CustomerDBUtill {
 			String sql = "select * from customer where id= '"+convertedID+"'";
 			
 			rs = stmt.executeQuery(sql);
-			
+			      
 			while(rs.next()) {
 				int id = rs.getInt(1);
 				String email = rs.getString(2);
@@ -141,6 +141,32 @@ public class CustomerDBUtill {
 		
 		
 		return cus;
+	}
+	
+	public boolean deletecustomer(String id) {
+		
+		int uid = Integer.parseInt(id);
+		boolean isSuccess = false;
+		
+		try {
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "delete from customer where id='"+uid+"'";
+			int r = stmt.executeUpdate(sql);
+			
+			if(r > 0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
 	}
 
 }
