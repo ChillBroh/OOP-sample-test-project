@@ -56,10 +56,25 @@
 	<c:param name="username" value="${username}"/>
 	<c:param name="password" value="${password}"/>
 	</c:url>
-	
+	<br><br>
 	<a href="${cusupdate}">
 		<input type="button" name="update-btn" value="Update My data">
 	</a>	
+	<br>
+	<br>
+	
+	<c:url value="deletecustomer.jsp" var="cusdelete">
+	
+	<c:param name="id" value="${id}"/>
+	<c:param name="email" value="${email}"/>
+	<c:param name="phone" value="${phone}"/>
+	<c:param name="username" value="${username}"/>
+	<c:param name="password" value="${password}"/>
+	</c:url>
+	
+	<a href="${cusdelete}">
+	<input type="button" name="del-btn" value="Delete My Account">
+	</a>
 	
 	
 </body>
