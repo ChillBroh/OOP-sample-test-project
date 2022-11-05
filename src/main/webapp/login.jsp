@@ -14,7 +14,7 @@
 		<br/>
 		<br/>
 		<label for = "pass">Password :</label>
-		<input type="text" id="pass" name="pass">
+		<input type="password" id="pass" name="pass">
 		<br/> 
 		<br/>
 		

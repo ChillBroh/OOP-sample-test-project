@@ -22,23 +22,23 @@
 	<form action="#" method="post">
 	
 	<label for="id">Customer ID</label>
-	<input type="text" id="id" name="id" value="">
+	<input type="text" id="id" name="id" value="<%= id%>">
 	<br>
 	<br>
 	<label for="email">Email </label>
-	<input type="text" id="email" name="email" value="">
+	<input type="email" id="email" name="email" value="<%= email%>">
 	<br>
 	<br>
 	<label for="phone">Phone Number </label>
-	<input type="text" id="phone" name="phone" value="">
+	<input type="text" id="phone" name="phone" value="<%= phone%>">
 	<br>
 	<br>
-	<label for="">UserName</label>
-	<input type="text" id="username" name="username" value="">
+	<label for="username">UserName</label>
+	<input type="text" id="username" name="username" value="<%= username%>">
 	<br>
 	<br>
 	<label for="password">Password</label>
-	<input type="text" id="password" name="password" value="">
+	<input type="password" id="password" name="password" value="<%= password%>">
 	<br>
 	<br>
 	<input type="submit" name="sub-btn" value="Update My data">
