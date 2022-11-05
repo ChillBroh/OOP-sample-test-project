@@ -26,7 +26,7 @@ public class UpdateCustomerServlet extends HttpServlet {
 		isTrue = cus.updateCustomer(id, email, phone, username, password);
 		
 		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("success.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("Success.jsp");
 			dis.forward(request, response);
 		}
 		else {

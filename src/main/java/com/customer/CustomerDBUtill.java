@@ -94,7 +94,7 @@ public class CustomerDBUtill {
 			con = DBConnect.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "update customer set email= '"+email+"','"+phone+"','"+username+"','"+password+"' where id= '"+id+"'";
+			String sql = "update customer set email= '"+email+"', phone = '"+phone+"', Username = '"+username+"', password = '"+password+"' where id= '"+id+"'";
 			
 			int rs = stmt.executeUpdate(sql);
 			
