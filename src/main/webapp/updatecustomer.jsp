@@ -22,7 +22,7 @@
 	<form action="#" method="post">
 	
 	<label for="id">Customer ID</label>
-	<input type="text" id="id" name="id" value="<%= id%>">
+	<input type="text" id="id" name="id" value="<%= id%>" readonly>
 	<br>
 	<br>
 	<label for="email">Email </label>
