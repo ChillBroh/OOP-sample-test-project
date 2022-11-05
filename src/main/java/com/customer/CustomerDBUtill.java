@@ -13,27 +13,24 @@ import com.oracle.wls.shaded.org.apache.xalan.trace.PrintTraceListener;
 
 public class CustomerDBUtill {
 	
+	private static Connection con = null;
+	private static Statement stmt = null;
+	private static ResultSet rs = null;
+	
 	public List<Customer> validate(String userName, String password){
 		
 		ArrayList <Customer> customer = new ArrayList<>();
-		
-		//create database connection
-		String url = "jdbc:mysql://localhost:3306/hotel";
-		String user = "root";
-		String pass = "Melisha@9";
-				
-		
+	
+	
 		//validate
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			
-			Connection con = DriverManager.getConnection(url, user,pass);
-			Statement stmt = con.createStatement();
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
 			
 			String sql = "Select * from customer where Username ='"+userName+"' and password = '"+password+"' ";
 			
-			ResultSet rs = stmt.executeQuery(sql);
+			rs = stmt.executeQuery(sql);
 			
 			if (rs.next()) {
 				int id = rs.getInt(1);
