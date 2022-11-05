@@ -7,6 +7,17 @@
 <title>Update data</title>
 </head>
 <body>
+
+
+	<%
+		String id = request.getParameter("id");
+		String email = request.getParameter("email");
+		String phone = request.getParameter("phone");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		
+	%>
 	
 	<form action="#" method="post">
 	

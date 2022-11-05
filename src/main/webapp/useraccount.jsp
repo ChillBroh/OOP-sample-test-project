@@ -51,10 +51,10 @@
 	<c:url value="updatecustomer.jsp" var="cusupdate">
 	
 	<c:param name="id" value="${id}"/>
-	<c:param name="id" value="${email}"/>
-	<c:param name="id" value="${phone}"/>
-	<c:param name="id" value="${username}"/>
-	<c:param name="id" value="${password}"/>
+	<c:param name="email" value="${email}"/>
+	<c:param name="phone" value="${phone}"/>
+	<c:param name="username" value="${username}"/>
+	<c:param name="password" value="${password}"/>
 	</c:url>
 	
 	<a href="${cusupdate}">
