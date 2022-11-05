@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/updatecustomer")
 public class UpdateCustomerServlet extends HttpServlet {
@@ -26,7 +27,19 @@ public class UpdateCustomerServlet extends HttpServlet {
 		isTrue = cus.updateCustomer(id, email, phone, username, password);
 		
 		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("Success.jsp");
+			
+			CustomerDBUtill cusD = new CustomerDBUtill();
+			
+			try {
+				List<Customer> cusDetails = cusD.getCustomerDetails(id);
+				request.setAttribute("cusDetails", cusDetails);
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace();
+			}
+			
+			RequestDispatcher dis = request.getRequestDispatcher("useraccount.jsp");
 			dis.forward(request, response);
 		}
 		else {

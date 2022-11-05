@@ -56,17 +56,12 @@ public class CustomerDBUtill {
 		
 		boolean isSuccess = false;
 		
-		//create database connection
-		
-		String url = "jdbc:mysql://localhost:3306/hotel";
-		String user = "root";
-		String pass = "Melisha@9";
 		
 		//insert data
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url,user,pass);
-			Statement stmt = con.createStatement();
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			
 			
 			String sql = "insert into customer values (0,'"+email+"','"+phone+"','"+username+"','"+password+"')";
 			int rs = stmt.executeUpdate(sql);
@@ -110,6 +105,42 @@ public class CustomerDBUtill {
 		}
 		
 		return isSuccess;
+	}
+	
+	public List<Customer> getCustomerDetails(String Id){
+		
+		int convertedID = Integer.parseInt(Id);
+		
+		ArrayList<Customer> cus =  new ArrayList<>();
+		
+		try {
+			
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "select * from customer where id= '"+convertedID+"'";
+			
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				int id = rs.getInt(1);
+				String email = rs.getString(2);
+				String phone = rs.getString(3);
+				String username = rs.getString(4);
+				String password = rs. getString(5);
+				
+				Customer c = new Customer(id, email, phone, username, password);
+				cus.add(c);
+			}
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return cus;
 	}
 
 }
