@@ -1,18 +1,18 @@
 package com.customer;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.oracle.wls.shaded.org.apache.xalan.trace.PrintTraceListener;
+
 
 
 
 public class CustomerDBUtill {
-	
+	boolean isSuccess = false;
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
@@ -54,7 +54,6 @@ public class CustomerDBUtill {
 	
 	public boolean insertCustomer(String email,String phone, String username, String password){
 		
-		boolean isSuccess = false;
 		
 		
 		//insert data
@@ -83,7 +82,6 @@ public class CustomerDBUtill {
 	}
 	
 	public boolean updateCustomer(String id,String email, String phone, String username, String password) {
-		boolean isSuccess = false;
 		
 		try {
 			con = DBConnect.getConnection();
@@ -146,7 +144,6 @@ public class CustomerDBUtill {
 	public boolean deletecustomer(String id) {
 		
 		int uid = Integer.parseInt(id);
-		boolean isSuccess = false;
 		
 		try {
 			con = DBConnect.getConnection();
@@ -165,6 +162,32 @@ public class CustomerDBUtill {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		return isSuccess;
+	}
+	
+	public boolean validatenew(String username, String password) {
+		
+		try {
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "Select * from customer where Username ='"+username+"' and password = '"+password+"' ";
+			
+			rs = stmt.executeQuery(sql);
+	
+		
+			if(rs.next()) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		
 		return isSuccess;
 	}

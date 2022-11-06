@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Delete account</title>
 </head>
 <body>
 	<%
@@ -12,7 +12,7 @@
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
 		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		
 		
 		
 	%>
@@ -35,7 +35,7 @@
 	<input type="text" id="username" name="username" value="<%= username%>" readonly>
 	<br>
 	<br>
-	<input type="button" name="del-btn" value="Delete My account">
+	<input type="submit" name="del-btn" value="Delete My account">
 	
 	</form>
 	
